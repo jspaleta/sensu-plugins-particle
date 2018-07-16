@@ -8,6 +8,9 @@ LineLength:
 AbcSize:
   Max: 100
 
+BlockLength:
+  Max : 50
+
 FileName:
   Enabled: false
 

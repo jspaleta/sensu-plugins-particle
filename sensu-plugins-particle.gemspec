@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.description            = 'Sensu plugins for interfacing with Particle.io Cloud API'
   s.email                  = '<jspaleta@gmail.com>'
   s.executables            = Dir.glob('bin/**/*.rb').map { |file| File.basename(file) }
-  s.files                  = Dir.glob('{bin,lib}/**/*') + %w(LICENSE README.md CHANGELOG.md)
+  s.files                  = Dir.glob('{bin,lib}/**/*') + %w[LICENSE README.md CHANGELOG.md]
   s.homepage               = 'https://github.com/jspaleta/sensu-plugins-slack'
   s.license                = 'MIT'
   s.metadata               = { 'maintainer'         => 'jspaleta',
@@ -38,7 +38,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'pry',                       '~> 0.10'
   s.add_development_dependency 'rake',                      '~> 10.0'
   s.add_development_dependency 'redcarpet',                 '~> 3.2'
-  s.add_development_dependency 'rubocop',                   '~> 0.40.0'
+  s.add_development_dependency 'rubocop',                   '~> 0.49.0'
   s.add_development_dependency 'rspec',                     '~> 3.1'
   s.add_development_dependency 'yard',                      '~> 0.8'
 end

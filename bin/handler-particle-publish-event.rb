@@ -59,7 +59,7 @@ class ParticleHandler < Sensu::Handler
       if File.readable?(config[:particle_config_file])
         file = File.read(config[:particle_config_file])
         config_hash = JSON.parse(file)
-        keys = %w(particle_user particle_password particle_token particle_event particle_data particle_private)
+        keys = %w[particle_user particle_password particle_token particle_event particle_data particle_private]
         keys.each do |key|
           config[key.to_sym] = config_hash[key] if config_hash.key?(key)
         end
@@ -73,13 +73,14 @@ class ParticleHandler < Sensu::Handler
 
     config[:particle_data] = "#{@event['check']['name']}::#{@event['occurrences']}" unless config.key?(:particle_data)
     config[:particle_private] = false unless config.key?(:particle_private)
-    if config[:verbose]
-      puts "Post Setup:: Private: #{config[:particle_private]}"
-      if config[:particle_token]
-        puts "Post Setup:: Token: #{config[:particle_token]}"
-      else
-        puts 'Post Setup:: Using Login'
-      end
+
+    return unless config[:verbose]
+
+    puts "Post Setup:: Private: #{config[:particle_private]}"
+    if config[:particle_token]
+      puts "Post Setup:: Token: #{config[:particle_token]}"
+    else
+      puts 'Post Setup:: Using Login'
     end
   end
 
