@@ -95,7 +95,10 @@ class ParticleHandler < Sensu::Handler
     client.login(config[:particle_user], config[:particle_password]) if config[:particle_user] && config[:particle_password]
 
     device = client.device(config[:particle_device])
-    device.ping
+    unless device.ping
+      puts "error: device #{config[:particle_device]} is offline"
+      exit 2 # unknown
+    end
 
     result = device.call(config[:particle_function], config[:particle_argument])
     exit result
