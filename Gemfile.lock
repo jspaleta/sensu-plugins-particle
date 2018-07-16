@@ -82,7 +82,7 @@ DEPENDENCIES
   rspec (~> 3.1)
   rubocop (~> 0.49.0)
   sensu-plugins-particle!
-  yard (~> 0.8)
+  yard (~> 0.9.11)
 
 BUNDLED WITH
    1.16.2
