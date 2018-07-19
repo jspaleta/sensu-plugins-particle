@@ -5,6 +5,11 @@ This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins
 
 ## [Unreleased]
 
+## 0.0.3 - 2018-07-19
+### Added
+- add check-particle-device-function.rb
+- add metric-particle-device-variable.rb
+
 ## 0.0.2 - 2018-07-15
 ### Added
 - add handler-particle-device-function.rb
